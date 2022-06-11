@@ -1,0 +1,2 @@
+ConnectionStrings:
+  sqlConnectionString: Server=.\SQLExpress;Database=ReadingLog;Trusted_Connection=True;

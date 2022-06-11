@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <DocumentationFile>bin/Debug/netcoreapp3.1/ModelDoc.xml</DocumentationFile>
+        <NoWarn>1591</NoWarn>
+        <AssemblyName>ReadingLog.Common</AssemblyName>
+        <RootNamespace>ReadingLog.Common</RootNamespace>
+        <PackageId>ReadingLog.Common</PackageId>
+        <Authors>ReadingLog.Common</Authors>
+        <Company>ReadingLog.Common</Company>
+        <Product>ReadingLog.Common</Product>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.15" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.15">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+        <PackageReference Include="NetEscapades.Configuration.Yaml" Version="2.2.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\ReadingLog.Api\appsettings.yml">
+        <Link>appsettings.yml</Link>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+</Project>
