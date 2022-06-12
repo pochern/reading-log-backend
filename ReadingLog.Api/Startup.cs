@@ -44,7 +44,7 @@ namespace ReadingLog.Api
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Heyy", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Reading Log API", Version = "v1" });
 
                 var modelDocPath = string.Empty;
                 if (OperatingSystem.IsMacOS())
@@ -96,7 +96,7 @@ namespace ReadingLog.Api
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("v1/swagger.json", "Hello there!");
+                c.SwaggerEndpoint("v1/swagger.json", "V1");
             });
 
             app.UseAuthorization();

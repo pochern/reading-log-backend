@@ -77,3 +77,8 @@ To get a local copy up and running, follow these steps.
     ```sh
     dotnet run
     ```
+
+### Usage
+In a browser, navigate to url [https://localhost:5001/swagger/index.html](https://localhost:5001/swagger/index.html) to interact with Swagger UI. 
+
+You will see available endpoints and its documentation. The *Example Value* in the **Request Body** of endpoints will contain a valid example of a request body for that endpoint.
