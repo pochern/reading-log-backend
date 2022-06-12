@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using ReadingLog.Common;
+using ReadingLog.Common.Helpers;
 using ReadingLog.Common.Models.DAL;
 
 namespace ReadingLog.Api
@@ -31,8 +32,18 @@ namespace ReadingLog.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Heyy", Version = "v1" });
 
+                var modelDocPath = string.Empty;
+                if (OperatingSystem.IsMacOS())
+                {
+                    modelDocPath = "../../../../ReadingLog.Common/bin/Debug/netcoreapp3.1/ModelDoc.xml";
+                }
+                else
+                {
+                    modelDocPath = "..\\..\\..\\..\\ReadingLog.Common\\bin\\Debug\\netcoreapp3.1\\ModelDoc.xml  ";
+                }
+
                 var filePath = Path.Combine(System.AppContext.BaseDirectory, "ApiDoc.xml");
-                var filePath2 = Path.Combine(System.AppContext.BaseDirectory, "..\\..\\..\\..\\ReadingLog.Common\\bin\\Debug\\netcoreapp3.1\\ModelDoc.xml");
+                var filePath2 = Path.Combine(System.AppContext.BaseDirectory, modelDocPath);
                 c.IncludeXmlComments(filePath);
                 c.IncludeXmlComments(filePath2);
             });
