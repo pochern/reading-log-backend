@@ -71,7 +71,7 @@ namespace ReadingLog.Api
             {
                 services.AddDbContext<ReadingLogDBContext>(options =>
                 {
-                    var mySqlConnectionStr = Configuration.GetConnectionString("unixConnectionString");
+                    var mySqlConnectionStr = _connection;
                     services.AddEntityFrameworkMySql();
                     options.UseMySql(mySqlConnectionStr, new MySqlServerVersion(new Version(8, 0, 12)));
                 });
