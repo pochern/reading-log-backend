@@ -1,2 +1,3 @@
 ConnectionStrings:
-  sqlConnectionString: Server=.\SQLExpress;Database=ReadingLog;Trusted_Connection=True;
+  windowsConnectionString": Server=.\\SQLExpress;Database=ReadingLog;Trusted_Connection=True;
+  unixConnectionString: server=localhost;database=ReadingLog;
