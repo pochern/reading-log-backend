@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ReadingLog.Common.Models;
 using ReadingLog.Common.Models.DAL;
@@ -38,7 +38,7 @@ namespace ReadingLog.Api.Controllers
         /// <summary>
         /// Gets all authors from the database.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of authors in the database</returns>
         [HttpGet]
         public IActionResult GetAuthors()
         {
@@ -46,28 +46,5 @@ namespace ReadingLog.Api.Controllers
             var authors = _repository.GetAuthors();
             return Ok(authors);
         }
-        // get all authors
-        //return context.Author.ToList();
-
-        // add an author
-        //Author author = new Author();
-        //author.FirstName = "John";
-        //author.LastName = "Smith";
-
-        //context.Author.Add(author);
-
-        // update author
-        //Author author = context.Author.Where(auth => auth.FirstName == "John").FirstOrDefault();
-        //// author instance from DB
-        //author.Phone = "777-777-7777";
-
-        // delete author
-        // Author author = context.Authors.Where(auth => auth.FirstName == "John").FirstOrDefault();
-        // context.Authors.Remove(author);
-        //
-        // context.SaveChanges();
-        //
-        // // get author by id
-        // return context.Authors.Where(auth => auth.FirstName == "John").ToList();
     }
 }
