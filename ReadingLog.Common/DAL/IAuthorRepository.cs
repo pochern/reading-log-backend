@@ -8,5 +8,7 @@ namespace ReadingLog.Common.Models.DAL
         public void AddAuthor(AuthorModel author);
 
         public List<Author> GetAuthors();
+
+        bool AuthorExists(AuthorModel model);
     }
 }

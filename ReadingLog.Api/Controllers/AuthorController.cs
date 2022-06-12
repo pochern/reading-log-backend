@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ReadingLog.Common.Models;
 using ReadingLog.Common.Models.DAL;
@@ -27,6 +27,10 @@ namespace ReadingLog.Api.Controllers
         public IActionResult AddAuthor(AuthorModel model)
         {
             _logger.LogInformation($"Adding {model.FirstName} {model.LastName} to the database");
+            if (_repository.AuthorExists(model))
+            {
+                return BadRequest($"An author with first name {model.FirstName} and last name {model.LastName} already exists.");
+            }
             _repository.AddAuthor(model);
             return Ok(model);
         }

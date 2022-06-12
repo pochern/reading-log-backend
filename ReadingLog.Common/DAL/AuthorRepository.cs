@@ -41,5 +41,10 @@ namespace ReadingLog.Common.Models.DAL
         {
             return _dbContext.Authors.ToList();
         }
+
+        public bool AuthorExists(AuthorModel model)
+        {
+            return _dbContext.Authors.Where(a => a.FirstName == model.FirstName && a.LastName == model.LastName).Any();
+        }
     }
 }
